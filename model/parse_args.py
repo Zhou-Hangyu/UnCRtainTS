@@ -91,5 +91,8 @@ def create_parser(mode='train'):
     parser.add_argument("--weight_folder", type=str, default="./results", help="Path to the main folder containing the pre-trained weights")
     parser.add_argument("--use_custom", dest="use_custom", action="store_true", help="whether to test on individually specified patches or not")
     parser.add_argument("--load_config", default='', type=str, help="path of conf.json file to load")
+    
+    # flags to toggle between AllClear and SEN12MS-CR-TS
+    parser.add_argument("--dataset", dest="dataset", type=str, default="SEN12MSCRTS", choices=["SEN12MSCRTS", "ALLCLEAR"], help="whether to use SAR or not")
 
     return parser
